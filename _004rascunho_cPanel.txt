@@ -1,0 +1,7 @@
+1 - Identifiquei os caminhos DNS no painel do domínio;
+2 - Criei emails; 
+3 - Criei um subdomínio: laravel.vedvoyager.com.br; // 20230823;
+4 - Atualizei o index.html no domínio principal e no subdomínio; // 20230823;
+5 - https://www.youtube.com/watch?v=gkrN1wkNDfE&lc=Ugx2mO0gaP3cgOiGDNB4AaABAg.9thGuNR_ZtA9thHJ4EqqAv&ab_channel=CarlosJunior;
+6 - https://search.google.com/search-console/welcome?utm_source=wnc_376106&utm_medium=gamma&utm_campaign=wnc_376106&utm_content=msg_743502&hl=pt; // 20230917 - copiado o txt de retorno, em um html pra dentro do servidor;
+7 - vedvoyager.com.br estava redirecionando para mywfmanager.com, subi novamente o site zipado e voltou ao normal; // 20240430;

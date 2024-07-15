@@ -1,0 +1,200 @@
+20230807;
+
+Para desabilitar o JavaScript: Settings - Preferences - Disable JS;
+
+alert('Olá'); // criar um alert na página;
+document.body.style.background = 'black'; // deixar o fundo negro;
+
+Clicar na setinha para ficar azul o elemento a ser inspecionado;
+
+img.lnXdpd; // descobrir o elemento da logo da google;
+
+no console: document.querySelector('img.lnXdpd').style.filter = 'grayscale(100%)'; // deixar o elemento da logo do google em escalas de 100%;
+no console: document.querySelector('img.lnXdpd').style.visibility = 'hidden'; // sumir com a logo do google;
+
+h2.bstn-hl-title; // elemento de um título de uma notícia do G!;
+ctrl+L: limpa o console;
+
+no console: document.querySelector('h2.bstn-hl-title').innerText = '3'; // mudar o texto de um elemento do site do G1;
+
+B - 
+
+AMBIENTE;
+
+Instalar Google Chrome + VS Code + NodeJS; // add path do node;
+
+20230811;
+
+VARIÁVEIS;
+
+Nomes das váriaveis podem começar com: $, _ ou letras;
+Não podem começar com números, mas pode conte-los;
+Pode conter acentos e símbolos, não pode conter espaços;
+em =, leia-se, recebe;
+" = ';
+não pode ter palavras reservadas;
+Dica: maiúsculas e minúsculas diferem;
+Tipos primitivos: number, string, boolean; // principais;
+typeof x; // retorna o tipo primitivo de x;
+typeof [] -> object;
+typeof function(){} -> funcrion;
+typeof null -> object;
+typeof NaN -> number;
+typeof infinity -> number;
+
+20230815
+
+OPERADORES 
+
+5 + 2 -> 7;
+5 - 2 -> 3;
+5*2 -> 10;
+5/2 -> 2.5;
+5%2 -> 1;
+5**2 -> 25;
+
+Precedência: (), **, */%, +-;
+
+n = n + 3 é a mesma coisa que: n+=3;
+x = x + 1 é a mesma coisa que: x++;
+Existe a pré e pós incrementação; // ++x, x++;
+
+20230816
+
+PART 2
+
+5 > 2 -> true;
+9 <= 7 -> false;
+5 == 5 -> true;
+4 != 4 -> false;
+5 == '5' -> true; // mesmo valor;
+5 === '5' -> false; // mesmo valor e mesmo tipo;
+5 !== 5 -> false;
+7.5 > 5 ? "APROVADO" : "REPROVADO" -> "APROVADO"; // o operador ternário é sempre o último a ser executado;
+
+20230817
+
+DOM
+
+Árvore DOM: 
+window; // aba do navegador; 
+	location; 
+	document; 
+		html;
+			head;
+			body;
+	history;
+
+Dom é um modelo de dados em árvore que é criado quando um documento html é carregado no navegador, cada elemento é referenciado na árvore, seguindo hierarquia de pai e filho;
+
+Ctrl+alt+h; // para rodar o htmlplay;
+
+20230818
+
+DOM Events - JavaScript Course #10
+
+mouseenter, mousemove, mousedown, mouseup, click, mouseout; // disparados com o mouse;
+função js: conjunto de instruções (eventos) que só ocorrem mediante um gatilho; // inseridas dentro de um bloco;
+function ação(parâmetros){};
+eventos podem ser inseridos na parte html ou js;
+
+20230821
+
+D - Conditions in JavaScript;
+
+Condição simples: apenas um bloco; // a outra seria com um if e um else;
+
+20230822
+
+off topic: indentação é a forma correta e não "identação";
+
+Condições aninhadas são ifs dentro de ifs;
+Condição múltipla: switch(expressão){case valor1: X break;..., etc, default: Y};
+
+
+20230823
+
+estrutura de repetição com teste lógico no início: while;
+estrutura de repetição com teste lógico no final: do while;
+
+var c = 1
+do {
+	console.log("X")
+	c++
+} while (c <= 6)
+
+20230824
+
+No VS code existe o Run - start debugging;
+Na janela watch - indicar a variável a ser monitorada;
+
+for(var c =1; c <= 4; c++){};
+
+20230825
+
+let num = [5, 8, 4]; // variáveis compostas;
+num[3] = 6; // add 6 na posição 3;
+num.push(7); // add 7 no fim do array;
+num.length; // comprimento do array;
+num.sort(); ordena os itens, "()" indica que é um método sem "()" é um atributo;
+
+for(let pos in num){
+	console.log(`A posicao ${pos} tem o valor ${num[pos]}`)
+}
+
+// uma forma simplificada para trabalhar com objetos^^, um array é um objeto;
+
+num.indexOf(7); // retorna a chave que o valor se encontra, se não existir retorna -1;
+
+20230828
+
+toda função precisa de uma chamada, automatizada ou manual;
+as funções podem ter parâmetros;
+as funções tem uma ação;
+as funções podem ter um retorno;
+
+funções são ações executadas assim que são chamadas ou em decorrência de um algum evento; // podem receber parâmetros e retornar um resultado;
+
+function ação(param){faça x; return res}; ação(5);
+
+Se eu não passar um ou mais parâmetros em uma função ele entrar como undefined;
+function(n1=0){}; // se o parâmetro n1 não for passado ele assumirá 0;
+
+20230809
+
+Next Steps - objetos são declarados com {};
+let amigo = {nome:'José', sexo:'M', peso: 85.4, engordar(p){}}; // um objeto é um array evoluido, pode até ter uma função dentro;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

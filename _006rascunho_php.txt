@@ -1,0 +1,533 @@
+20230829
+
+Alan kay - fundador do POO; // matemático e biólogo;
+
+Vantagens da POO: Confiabilidade (devido ao isolamento), Oportuno (facilidade de desenvolver em paralelo), Manutenível (a atualização fica mais fácil), Extensível (fácil de criar novas funcionalidades), Reutilizável (pode usar em diferentes aplicabilidades) e Natural (talvez algo que venha da biologia);
+
+20230830
+
+Ambiente de aprendizado: xampp + netbeans; 
+Ferramentas - opções: colocar o interpretador do xampp; // php.exe;
+Criar aplicação php; // na pasta fonte: c:\xampp\htdocs\nomePasta;
+
+20230831
+
+Objeto: tudo aquilo que tenha características, comportamentos e estado atual;
+Classe: molde que foi usado pra gerar o objeto; // Classe Caneta - modelo: string; cor: string; carga: inteiro; tampada: boolean - FimClasse;
+Dentro de uma classe podem haver metodos; // Metodo rabiscar();
+Instanciar: c1 = nova caneta; c1.cor = "azul"; c1.ponta = 0.5; c1.rabiscar();
+Um objeto é uma instância de uma classe;
+Alguns consideram abstração como o primeiro pilar da Orientação a Objetos;
+
+20230901
+
+O PHP não exige que as classes estejam em documentos separados;
+http://localhost/_poo/teste.php;
+
+20230908 - Curso POO Teoria #03a;
+
+Visibilidade: Uma parada muito importante em POO. Indica o nível de acesso aos componentes internos de uma classe.
+UML (Linguagem de Modelagem Unificada): Diagrama de Classes. Toda classe é um retângulo com um título, atributos e métodos.
+Público (+): Telefone que qualquer um pode usar. Todos podem usar.
+Privado (-): Apenas eu posso usar, como um celular. Comenta que apenas a classe atual pode usar.
+Protegido (#): Apenas uma família pode usar, como um telefone de casa. Dá acesso à classe atual e aos seus dependentes.
+
+20230911 - Curso POO PHP #03b;
+
+Na declaração dos atributos da classe: public $modelo; private $ponta; protected $tampada;
+Na declaração dos métodos da classe: public function rabiscar(){};
+Se tentar definir algum atributo privado ou protegido, retorna-se um Fatal error; // mesma lógica para métodos;
+É possível definir um atributo privado através de um método público;
+
+20230912 - Curso POO Teoria #04a;
+
+Métodos acessores: dão acesso a uma determinada coisa, mantendo a segurança; // Getters;
+Métodos modificadores: modificam coisas que estão dentro do objeto; // Setters;
+Métodos construtores: cria um objeto, pode até receber parâmetros;
+
+20230913 - Curso POO PHP #04b - Métodos Getter, Setter e Construtor;
+
+O construtor pode ter o mesmo nome da Classe ou "__construct";
+public function Caneta($m, $c, $p){}; // método construtor com parâmetros;
+
+20230915 - Teoria #05a - Exemplo Prático com Objetos;
+
+Exemplo de Classe ContaBanco;
+
+20230918 - #05b - Exemplo Prático em PHP;
+
+Não é a melhor opção escrever (echo) dentro de uma funcrion;
+$this->setSaldo($this->getSaldo() + $v);
+$this->saldo = $this->saldo + $v; // igual ao de cima, porém o primeiro é preferível;
+
+20230921 - Teoria #06a - Pilares da POO: Encapsulamento;
+
+Pilares da POO: encapsulamento, herança, polimorfismo; // alguns também colocam a abstração (outros a colocam dentro do encapsulamento).
+A cápsula protege o externo do interno e vice-versa.
+A cápsula padroniza o formato dos objetos; // Internamente podem ser diferentes.
+Encapsular: ocultar partes independentes da implementação, permitindo a construção de partes invisíveis ao mundo exterior.
+Um bom objeto encapsulado possui uma boa interface.
+Encapsulamento: torna as mudanças invisíveis, facilita o reuso do código e reduz os efeitos colaterais.
+Cria-se uma interface e define-se os métodos abstratos; // Não se escrevem os códigos dos métodos, apenas os declara.
+Dentro de uma interface, todos os métodos são públicos.
+Todos os atributos da classe/objeto ficam como privados.
+
+20230925 - PHP #06b - Encapsulamento;
+
+1 - cria-se uma interface do php: <?php interface Controlador{};
+2 - cria-se as funções abstratas: public function maisVolume();
+3 - cria-se uma classe php: <?php class ControleRemoto{}; // atributos, construtor, get e set;
+4 - cria-se um index.php; // com um require_once;
+5 - cria-se um objeto; // c = new ControleRemoto();
+
+20230926 - Teoria #07a - Relacionamento entre Classes;
+
+Abstrair é considerar o que importa;
+Para muitos objetos é recomendado se criar um vetor; // exemplo muitos lutadores;
+Pode-se até criar vetores de vetores, para se passar os atributos construtores de cada objeto;
+
+20230927 - PHP #07b - Objetos Compostos em PHP;
+
+index.php é onde a aplicação começa a ser executada; // código principal;
+criar a classe lutador; // atributos, métodos e métodos especiais;
+function setPeso($peso){ $this->peso = $peso; $this->setCategoria();} // setCategoria é um outro método que é chamado;
+
+20230928 - teoria #08a - Relacionamento de Agregação;
+
+Relacionar uma classe a outra: agregação é quando os atributos de uma classe são instâncias de outra;
+Eventualmente se chama o método de outra classe;
+
+20230929 - PHP #08b - Agregação entre Objetos em PHP;
+
+Fazer todas as classes em um mesmo arquivo pode complicar o reuso;
+Quando uma classe usa a outra: requere_once 'Lutador.php';
+Lembrando: métodos especiais: get e set;
+
+20231002 - Teoria #09 - Exercícios de POO;
+
+protegido: garante aacesso para o objeto e suas subclasses; 
+
+20230103 - PHP #09b - Exercício prático POO em PHP;
+
+apenas um exercícios com objetos: pessoas e livros;
+
+20231004 - Teoria #10a - Herança (Parte 1);
+
+um filho pode ter características e comportamentos das mães;
+pode-se criar uma classe a partir de outra classe; 
+cria-se uma hierarquia entre classes;
+classe Aluno estende Pessoa;
+
+20231005 - PHP #10b - Herança (Parte 1);
+
+require_once 'Pessoa.php';
+class Aluno extends Pessoa {};
+
+20231006 - Teoria #11a - Herança (Parte 2);
+
+O conceito de superclasse e subclasse, depende do ponto de vista;
+Uma subclasse pode ser progenitora de outra classe;
+Uma subclasse herda tudo que sua progenitora tem;
+Raiz é a classe que não tem mães;
+Folhas são as classes que não tem filhas;
+Na literatura diz-se que a classe A é ancestral da classe B quando elá é de avó em diante;
+Herança pobre não tem nenhuma nova implementação;
+Herança de implementação tem novos atributos e funções;
+Classe abstrata não pode ser instanciada, apenas é progenitora;
+Método abstrato pode ser declarado mas não implementado na progenitora;
+Classe final não pode ter filhos;
+Método final não pode ser sobrescrito pelas suas subclasses, obrigatóriamente herdado;
+
+20231009 - PHP #11b - Herança (Parte 2);
+
+abstract class Pessoa{}; // criando uma classe abstrata que não pode ser instanciada;
+class Visitante extends Pessoa{}; // essa é uma classe filha da abstrata e pode ser instanciada;
+o que se colocar a mais na classe filha ela vai juntar com as características da mãe;
+pode-se sobrepor um método da mãe na classe filha; // ocorre a substituição;
+public final function pagarMensalidade(){}; // métodos finais não podem ser sobrepostos, mesma lógica para classes;
+
+20231010 - Teoria #12a - Conceito Polimorfismo (Parte 1);
+
+Um mesmo método pode ter mais de um comportamento;
+Assinatura de um método: quantidade e tipos de parâmetros;
+tipos de polimorfismo: sobreposição e sobrecarga; // existem outros dois;
+Quando se tem um método abstrato é obrigatório descreve-lo no filho;
+Polimorfismo de sobreposição acontece quando substituímos um método de uma superclasse na sua subclasse, usando a mesma assinatura;  
+
+20231011 - PHP #12b - Polimorfismo em PHP (Parte 1);
+
+class Mamifero extends Animal {
+	private $corPelo;
+	public function alimentar(){
+	echo "<p>Mamando</p>";
+	}
+}
+A function alimentar pode ocorrer em mais de uma classe filha de Animal, cada uma tendo um comportamento diferente; // polimorfismo;
+
+20231013 - Teoria #13a - Conceito Polimorfismo (Parte 2);
+
+Sobreposição: mesma assinatura e classes diferentes; // isso define a sobreposição (overwriting);
+É possível ter o mesmo método descrito dentro de uma mesma classe com diferentes assinaturas;
+Sobrecarga: mesma classe e assinaturas diferentes; // PHP não suporta sobrecarga;
+
+20231016 - PHP #13b - Polimorfismo Sobrecarga (Parte 2);
+
+No PHP não é possível declarar o mesmo método mais de uma vez na mesma classe;
+Proposição do Guanabara pra sobrecarga no PHP: criar métodos com nomes diferentes; // gambiarra;
+
+20231017 - conceito #14a - Exercícios de POO (Parte 2);
+
+método abstrado é declarado mas não implementado;
+com o mecanismo de herança, é possível estabelecer relacionamentos "é um" entre classes;
+final class ClasseA{}; // a ClasseA não poderá ter subclasses;
+algo que é privado pode se tornar público, algo público não pode se tornar privado; // é possível subir o nível, não descer;
+-> símbolo para acessar as funções definidas em uma classe;
+
+20231018 - PHP #14b - Projeto Final em PHP (Parte 1);
+
+tanto interfaces como classes abstratas são contratos de padronização de classes e métodos, no entando apenas classes abstratas podem ter implementações concretas de métodos;
+class nomeClass implements nomeInterface{};
+
+20231019 - conceito #15a - Exercícios de POO (Parte 3);
+
+Exercícios finais;
+
+20231020 - PHP #15b - Projeto Final em PHP (Parte 2);
+
+fim do projeto final; // ainda houveram dois vídeos, um sobre curso de Python e outro sobre PHP 7;
+
+20231004 - Esse curso de PHP serve pra mim? - @CursoemVideo de PHP - Gustavo Guanabara;
+
+Apresentação geral do curso;
+
+20231005 - Esse curso de PHP serve pra mim? - @CursoemVideo de PHP - Gustavo Guanabara;
+
+Apontamento sobre os perfis indicados para alunos do curso;
+
+20231006 - Lista TOP 6 livros de PHP - @CursoemVideo de PHP - Gustavo Guanabara;
+
+Indicações de livros;
+
+20231009 - A evolução do PHP;
+
+História do PHP;
+Personal Home Page;
+PHP: Hypertext Preprocessor; // acrônimo recursivo;
+
+20231010 - Por que um elefante é o mascote do PHP?;
+
+Vincent Pontier: autor;
+
+20231011 - As versões do PHP e seus recursos;
+
+2004 - PHP 5.0 - a que foi mais popular e a que deu mais problemas; // com POO;
+2005 - PHP 6.0 - nunca recebeu uma release oficial;
+2015 - PHP 7.0 - Zend Engine 3.0; // até 9x mais performance;
+2020 - PHP 8.0 - Zend Engine 4.0, Just-In-Time compilation;
+
+20231013 - O PHP vai morrer? Vale a pena estudar PHP?; 
+
+O PHP não está morrendo;
+
+20231017 - Como funciona o PHP?;
+
+o PHP é server-side; // quem tem mais trabalho é o servidor;
+
+20231018 - É possível criar qualquer coisa com PHP?
+
+analogia da parafusadeira elétrica; 
+
+20231019 - Como transformar seu computador em servidor PHP;
+
+apache + MySQL + interpretadorPHP; // AMP;
+
+20231020 - É possível treinar PHP no smartphone;
+
+https://onlinephp.io/;
+
+20231023 - Seu servidor PHP no Windows;
+
+xampp; // apachefriends.org;
+127.0.0.1; // digitar no navegador, ou localhost;
+
+20231025 - Seu servidor PHP no Linux; // na distro Mint;
+
+sudo ./nomeDoArquivo;
+htdocs é a pasta onde criamos os arquivos para serem executados em servidor local; // mesma lógica para o Windows;
+
+20231026 - Seu servidor PHP no MacOS; 
+
+o visual é parecido com o linux;
+
+20231027 - Configurações importantes para VS Code;
+
+c/xampp/htdocs: criar pasta aqui;
+trabalhe abrindo a pasta;
+marcar o Auto Save; // onWindowChange;
+editor: Word Wrap -> on;
+
+20231030 - Melhores extensões para VS Code;
+
+PHP Intelephense;
+Format HTML in PHP;
+PHP Awesome Snippets;
+
+20231031 - Primeiro programa em PHP;
+
+index.php; // primeiro arquivo que a página web irá abrir;
+<?php phpinfo() ?>; // informações do ambiente;
+
+20231101 - O PHP por dentro;
+
+html: h1 é um título de nível 1;
+<script language = "php"> </script>; // um código PHP dentro do html, da versão 5 pra baixo;
+<?php ?>; // super tag PHP;
+<? ?>; // short open tag;
+<% %>; // ASP tag, já não funcionam mais;
+<?= ?>; // short tag PHP, apenas para um único comando;
+o poder do PHP é pré-processar códigos e mandar para o cliente;
+
+20231103 - Como configurar o php.ini;
+
+xampp -> php -> php.ini; // é um arquivo texto de configurações;
+
+20231106 - Variáveis e constantes em PHP;
+
+a memória é um grande armário cheio de gavetas;
+const PAIS = "Brasil"; // uma constante não pode ser alterada durante o programa;
+
+20231107 - Tipos primitivos do PHP;
+
+PHP é uma linguagem fracamente tipada;
+categorias: escalares, compostos e especiais;
+escalares: string, int, float e boolean; // float e double são a mesma coisa;
+0x1A é int; // todo número hexadecimal em PHP começa com 0x;
+3e2 é float; // todo número representado por potência é float;
+$num = (int) 3e2; // forçando a barra pra retornar inteiro (coerção/casting);
+compostos: array e object;
+especiais: a ser aprofundado;
+
+20231108 - Manipulação de strings com PHP;
+
+double quoted, single quoted, heredoc e nowdoc;
+double quoted: "PHP\u{1F418}" -> PHP e desenho do elefante; // vai haver interpretação;
+sengle quoted: "PHP\u{1F418}" -> PHP\u{1F418}; // sem interpretação, manda a string crua;
+echo "Rodrigo \"Monotauro\" Nogueira" -> Rodrigo "Minotauro" Nogueira; // sequência de escape;
+heredoc: echo <<<TESTE texto aqui TESTE; // consegue quebrar linhas em formato texto;
+nowdoc: echo <<<'TESTE' texto aqui TESTE; // mesma coisa da heredoc, mas sem interpretação;
+
+20231109 - Obtendo dados de formulários com PHP (parte 1);
+
+method (get), action (cad.php), name (sobrenome) e value ("Guanabara");
+
+20231110 - Obtendo dados de formulários com PHP (parte 2);
+
+var_dump($_GET); // super global;
+$n = $_GET["nome"]; // o nome viria do index - <input type = "text" name = "nome" id = "idnome">;
+
+20231113 - Expressões Aritméticas com PHP;
+
+5+2/2 = 6;
+(), **, * ou / ou %, + ou -; // parênteses são modificadores da ordem de precedência;
+
+20231114 - Funções Aritméticas do PHP;
+
+abs(); // retorna o valor absoluto;
+base_convert(254, 10, 8); // converte 254 da base 10 para a base 8;
+ceil(), floor(), round(); // arredondamento;
+intdiv(5, 2); // divisão inteira entre 5 e 2 -> 2;
+min() e max();
+$r = M_PI; // constante pi;
+pow(5, 2) = 25;
+
+20231116 - Operadores Aritméticos do PHP;
+
+"2" + "2" = 4;
+5/2 = 2,5;
+5%2 = 1; // resto;
+
+20231117 - Cinco desafios PHP para iniciantes;
+
+apresentação de alguns desafios;
+
+20231120 - Desafio 001: Antecessor e Sucessor;
+
+simples cálculo de soma ou concatenação com: "texto". $n + 1;
+
+20231121 - Desafio 002: Sorteador de números;
+
+rand(); // 1951 - linear congretial gererator;
+mt_rand(); // 1997 - mersenne Twister;
+random_int(); // gera números aleatórios criptograficamente seguros;
+
+20231122 - Desafio 003: Conversor de Moedas básico;
+
+number_format($real, 2, ",", "."); // 1000 -> 1.000,00;
+$padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+echo "Seus ".numfmt_format_currency($padrao, $real, "BRL")." equivalem a US\$".$dolar;
+
+20231123 - Desafio 004: Conversor de Moedas avançado;
+
+alguns softwares tem APIs de consumos de dados;
+json: javascript object notation;
+json_decode(file_get_contents($url), true);
+
+20231124 - Desafio 005: Analisando um número Real;
+
+<input type = "number" name = "n" id = "n" step = "0.001">;
+<button onclick = "javascript:history.go(-1)">Voltar</button>;
+$num = 10.75;
+$int = (int)$num; // $int será 10;
+$fra = $num - $int;
+
+20231127 - Superglobais no PHP;
+
+$_GET: .php?nome=Arthur$idade=31; // são passados dois parâmetros através do GET;
+$_POST: .php?nome=Arthur$idade=31; // o post não recebe os parâmetros pela url, mas fica visível no inspecionar;
+$_REQUEST: array associativo de GET e POST;
+<form action = "superglobais.php?tipo=teste&turno=noite" method = "post">; // passando parâmetros por GET e POST;
+setcookie("dia", "SEGUNDA", time() + 3600); // vai durar uma hora;
+var_dump($_COOKIE);
+session_start(); // inicia uma sessão;
+$_SESSION["teste"] = "FUNCIONOU!";
+var_dump($_SERVER); // muitas informações do servidor;
+var_dump($GLOBALS); // mostra tudo;
+
+20231128 - Formulários retroalimentados;
+
+<?php
+// capturando os dados do formulário retroalimentado;
+$valor1 = $_GET['v1'] ?? 0;
+$valor2 = $_GET['v2'] ?? 0;
+?>
+
+20231129 - Oito desafios PHP para iniciantes;
+
+apresentação de alguns desafios;
+
+20231130 - Desafio 006: A anatomia de uma divisão;
+
+intdiv($dividendo, $divisor);
+
+20231201 - Desafio 007: Salário Mínimo com PHP;
+
+<input type = "number" name = "sal" id = "sal" value = "<?=$salario?>" step = "0.01">
+$salario = $_GET['sal'] ?? 0; // o PHP pega pelo name;
+
+20231204 - Desafio 008: Exercício das Raízes;
+
+$rc = $num**(1/3);
+
+20231205 - Desafio 009: Entendendo as Médias;
+
+<section> é um elemento de marcação usado para representar uma seção ou área temática dentro de um documento web;
+
+20231206 - Desafio 010: Máquina do Tempo;
+
+<?php
+$atual = date('Y'); // obtém o ano atual;
+$ano = $_GET['ano'] ?? $atual;
+?>
+
+<main>
+    <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
+        <input type="number" name="ano" id="ano" min="1900" value="<?=$ano?>">
+        <button type="submit">Enviar</button> <!-- Botão de envio -->
+    </form>
+</main> 
+o código acima foi gerado por ia;
+
+20231207 - Desafio 011: Reajustar Preços;
+
+<label for="reaj">Qual será o percentual de reajuste? (<strong><span id="p">?</span>%</strong>)</label>;
+
+20231208 - Desafio 012: Calculadora de Tempo;
+
+<form action="<?$_SERVER['PHP_SELF']?>" method="get">;
+
+20231211 - Desafio 013: Simulando um Caixa Eletrônico;
+
+<style>
+	img.nota{ // todas as minhas imagens que forem da classe nota, a "class" vem dentro da tag img;
+	}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

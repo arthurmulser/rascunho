@@ -1,0 +1,12 @@
+1 - 20240318 - VS Code;
+2 - 20240318 - GIT;
+3 - 20240318 - Android Studio;
+4 - 20240318 - Android SDK; // com algumas falhas;
+5 - 20240318 - Google Chrome;
+6 - 20240318 - Flutter SDK;
+7 - 20240318 - MySQL Workbench;
+8 - 20240319 - FileZilla FTP Client;
+9 - 20240319 - WinRAR;
+10 - 20240320 - Oracle VM VirtualBox;
+
+

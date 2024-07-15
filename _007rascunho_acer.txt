@@ -1,0 +1,12 @@
+20230902 - XAMPP;
+20230902 - VSCODE;
+20230905 - COMPOSER;
+20230913 - GIT;
+20230917 - mysql-workbench-community-8.0.34-winx64;
+20231201 - FLUTTER SDK; sdk, configurando path;
+20231202 - ANDROID STUDIO;
+20231206 - NODE.JS; pra executar o npm;
+20240219 - Notepad++;
+20240309 - Electrum Wallet;
+20240519 - Arduino IDE 2.3.2;
+20240519 - apaguei a pasta Steam dentro de AppData -> Local;

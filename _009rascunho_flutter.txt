@@ -1,0 +1,43 @@
+1 - flutter create teste;
+2 - flutter doctor; // checar o ambiente de desenvolvimento;
+3 - flutter run;
+4 - git init, git add *, git commit -m "CRIANDO O PROJETO", git branch -M master,  git remote add origin https://github.com/arthurmulser/flutter.git, git push origin master;
+5 - flutter pub get;
+6 - flutter build apk; // build\app\outputs\flutter-apk\app-release.apk;
+---
+7 - criei a api; 
+8 - http: ^1.1.2; // pubspec.yaml;
+9 - <uses-permission android:name="android.permission.INTERNET"/>; // android/app/src/main/AndroidManifest.xml;
+--- 20240201;
+10 - o arquivo pubspec.yaml especifica informações básicas sobre o app, como a versão atual, as dependências e os recursos que ele terá;
+11 - o arquivo analysis_options.yaml determina o quanto o flutter será rigoroso ao analisar o código;
+--- 20240204;
+12 - dependencies -> shared_preferences: ^2.0.12; // pacote para salvar informações localmente no dispositivo;
+--- 20240212;
+13 - android/app/src/main/AndroidManifest.xml; // android:label="Novo Nome do App";
+14 - yaml; // name: novo_nome_do_app;
+--- 20240215;
+15 - android/app/src/main/res, localize a pasta mipmap; // para mudar o ícone do app, inserir ic_launcher em todas pastas mipmap;
+--- 20240207;
+16 - para se trabalhar com sqlite, dependencies: sqflite: ^2.3.2;
+--- 20240219;
+17 - git clone https://github.com/arthurmulser/mars;
+--- 20240312;
+18 - para instalar o flutter: colocar o path (flutter e sdk) nas variáveis de ambiente e rodar no terminal flutter config --android-sdk C:/AndroidStudio para informar o caminho do sdk para o flutter; // C:/AndroidStudio é o caminho do sdk, verificar sentido da "/";
+--- 20240516;
+19 - Error: Gradle task assembleDebug failed with exit code 1; // erro que apareceu ao tentar implementar o qr_code_scanner, a solução foi: dependencies (em baixo) -> qr_code_scanner -> android -> build.gradle (aqui setar: ext.kotlin_version = '1.7.10');
+--- 20240622;
+20 - no note acer tive que ajustar o "minSdkVersion 20"; // dentro de android -> app -> build.gradle;
+21 - depois no terminal veio a mensagem: Do you want to continue with adding multidex support for Android? [y|n]: y; // cliquei "y";
+
+
+
+
+
+
+
+
+
+
+
+

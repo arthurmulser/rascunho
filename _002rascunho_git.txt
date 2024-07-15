@@ -1,0 +1,7 @@
+1 - git init; // iniciar o git;
+2 - git status; // verificar os arquivos com ou sem commit;
+3 - git config --global user.email "arthurmulser@hotmail.com"; // pediu pra setar isso antes do commit;
+4 - git config --global user.name "vedvoyager"; // mesmo de 3;
+5 - git commit -a -m "Início de trabalho"; // commit de tudo com mensagem;
+6 - git checkout 48f0f080d05434111bc2cf4d5183df660194b451 -- lib/interfaces_turnos_oper_level2/pessoasNoTurno.dart; // restaura apenas o arquivo pessoasNoTurno para a versão do hash 48f0f080d05434111bc2cf4d5183df660194b451;
+7 - git clone https://github.com/Tech2as/projetoInicial; // clonar um projeto remoto; 

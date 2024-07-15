@@ -1,0 +1,168 @@
+1 - instalei o wamp; // foi necessário atualizar o visual c++ antes;
+2 - instalei o composer;
+3 - cmd: composer global require laravel/installer;
+4 - cmd: laravel new blog; // blog seria o nome do projeto;
+5 - cmd: composer create-project --prefer-dist laravel/laravel ved3;
+6 - php artisan serve;
+7 - composer require laravel/breeze:1.9.4; // composer require laravel/breeze para a versão mais recente;
+8 - php artisan breeze:install;
+9 - npm install;
+10 - npm run dev; // não foi preciso executar os npm's com a versão mais recente do breeze;
+11 - php artisan migrate;
+---
+12 - criar pastas css, img e js dentro da pasta public;
+--- 20240205;
+13 - php artisan make:migration create_tb_perguntas_table; // criar tb_perguntas, depois rodar o artisan migrate;
+--- 20240207;
+14 - php artisan make:model Tb_pergunta; // criar model, para se fazer o insert na tb_perguntas;
+15 - use App\Models\pergunta; // no web.php;
+--- 20240208;
+16 - protected $primaryKey = 'idtb_perguntas'; // na model, apontado o nome da prymarekey da tabela, necessário quando não é 'id';
+--- 20240220;
+17 - dashboard(app(navigation(application-logo))); // pra eu mudar a logo na dash tive que ir ate a application-logo;
+--- 20240225;
+18 - composer update laravel/framework e composer update; // atualizou algumas coisas, mas a versão do laravel permaneceu: Laravel Framework 9.52.16;
+--- 20240303;
+19 - [vedvoyager@bs021 laravel.vedvoyager.com.br]$ php artisan migrate; // no terminal do cPanel para rodar as migrations;
+20 - Bancos de dados MySQL - Gerenciar privilégios do usuário; // dar somente os acessos necessários;
+21 - php artisan migrate:rollback; // desfaz a ultima migration;
+--- 20240514;
+22 - php artisan make:controller PhotoController --resource; // cria um controller em app->Http->Controllers;
+
+*verificar rota de read das perguntas, está rodando, mas não está imprimindo;
+
+///
+
+2 - Instalando o Laravel - #02;
+
+são os primeiros passos acima;
+
+3 - Rotas e Views - #03;
+
+routes: mapeam as urls; // web.php -> aqui estão as rotas;
+views: templates, camadas de apresentação;
+return view('welcome', ['nome' => $nome]); // passando o parâmetro nome na route;
+<p>{{$nome}}</p>; // chamando o parâmetro no html da blade;
+
+4 - Conhecendo o blade - #04;
+
+as views são geralmente arquivos .blade;
+
+5 - Avançando na template engine Blade (loop) - #05;
+
+@for e @endfor;
+
+6 - Adicionando arquivos estáticos - #06;
+
+criar pastas css, img e js dentro da pasta public;
+
+7 - Criando layout com blade - #07;
+
+usar o mesmo header e footer em várias páginas, sem repetir o código;
+@extends('layouts.main); // vai expartir esse layout que vem da blade "main";
+
+8 - Resgatando parâmetros de URL - #08;
+
+routes -> web.php;
+
+9 - Criando Controllers - #09;
+
+Recebe e envia informações as views;
+Envia e espera resposta do banco de dados;
+php artisan make:controller nome;
+
+10 - Conexão ao banco de dados MySQL - #10;
+
+A conexão é configurada com o .env; // configurações sensíveis;
+As migrations auxiliam no versionamento do banco de dados;
+localhost/phpmyadmin;
+php artisan migrate;
+
+11 - Introdução a migrations do Laravel - #11;
+
+Migrations funcionam como um versionamento do banco de dados;
+php artisan make:migration create_products_table;
+
+12 - Avançando em migrations do Laravel - #12;
+
+php artisan migrate:refresh; // faz o roolback e depois executa todas as migrations;
+php artisan migrate:fresh; // faz o drop em todas as tabelas e depois executa todas as migrations;
+
+13 - Curso Laravel - Utilizando o Eloquent do Laravel - #13;
+
+Eloquent é a ORM do Laravel;
+
+14 - Curso Laravel - Finalizando a Home - #14; 
+
+Parte visual da home;
+
+20231014 - Salvando dados no banco MySQL - #15;
+
+function store(Request $request){$event->save()}; // dentro da pasta events;
+
+20231015 - Conhecendo as Flash Messages - #16;
+
+none;
+
+20231016 - Upload de imagens com Laravel - #17;
+
+php artisan make:migration add_image_to_events_table. // cria um arquivo migration a ser editado manualmente, de forma facilitada;
+
+20231017 - Resgatando um registro do banco de dados - #18;
+
+$event = Event::findOrFail($id);
+
+20231018 - Salvando JSON no banco de dados - #19;
+
+$event->items = $request->items;
+
+20231019 - Salvando datas no banco de dados - #20;
+
+criar imput tipo date na view;
+fazer a migration com um dateTime;
+
+20231020 - Busca no Laravel - #21;
+
+$events = Event::where([]); dentro vai o like;
+
+20231021 - Autenticação no Laravel (login/registro) - #22;
+
+php artisan jetstream:install livewire;	
+
+20231022 - Relação One to Many - #23;
+
+$table->foreignId('user_id')->constrained();
+
+20231023 - Exibindo dados do usuário na view - #24;
+
+$registro = Modelo::findOrFail($id);
+
+20231024 - Curso Laravel - Criando uma dashboard - #25;
+
+@foreach($events as $event);
+@endforeach;
+
+20231025 - Deletando dados (CRUD: Delete) - #26
+
+Event::findorfail($id)->delete(); // no controller;
+
+20231026 - Atualização de dados (CRUD: Update) - #27;
+
+web.php; // onde se adiciona as rotas;
+EventController.php; // onde se cria a public function edit($id){};
+
+20231027 - Relação many to many - #28;
+
+php artisan make:migration create_event_user_table;
+
+20231028 - Exibindo eventos do usuário - #29;
+
+if($user->id != event->user_id){}; // compara usuário da sessão com usuário do evento;
+
+20231030 - Removendo presença do evento - #30;
+
+Criou-se uma function no EventController para deletar um registro;
+
+20231030 - Conclusão - #31;
+
+propaganda dos cursos;

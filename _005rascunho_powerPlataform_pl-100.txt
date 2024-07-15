@@ -1,0 +1,450 @@
+WhatsApp Image 2022-10-10 at 08.54.40 is actually the number one topic of 05 chapter;
+WhatsApp Image 2022-10-21 at 10.09.23 and WhatsApp Image 2022-10-21 at 10.10.25 are the same topic - number 3;
+
+///
+
+Desenvolvimento imperativo: como atingir a meta - mais métodos, passo a passo;
+
+Desenvolvimento declarativo: como obter o resultado - menos métodos, mais direto;
+
+--
+
+Variáveis globais: mais tradicional, Set, disponível em toda a execução;
+
+Variáveis de contexto: disponível apenas na tela em questão, UpdateContext, usada em pop-up;
+
+Coleção: disponível em toda a aplicação, Collect ou ClearCollect, armazena tabelas;
+
+--
+
+O Power Apps determinará o tipo da variável automaticamente;
+
+--
+
+UpdateContext({varCount: 1, varActive: true, varName: User().FullName}); // Exemplo de variáveis de contexto, mais de uma por vez;
+
+Set(varCount, 1); Set(varActive, true); Set(varName, User().FullName); // Mesmo exemplo, variáveis globais;
+
+--
+
+Set(varCounter, varCounter + 1); Variáveis podem ter autorreferência;
+
+Por padrão: texto = ""; numéticas = 0; booleanas = false; 
+
+--
+
+As variáveis não são atualizadas automaticamente;
+
+-------
+
+Função Patch: atualizar fontes de dados sem uso direto de forms; // Exemplo: criar funcionalidade de log;
+
+Remove(CustomerOrders, ThisItem); // Contrário da função Patch;
+
+ForAll: Patch e Remove operam sobre um único registro, a função ForAll opera um loop em uma tabela de dados;
+
+Patch(CustomerOrders, Defaults(CustomerOrders), {Region: "Americas", Country: "Canada"}); // Criando um registro. Defaults retorna um registro que contém os valores padrão da fonte de dados;
+
+Patch(CustomerOrders, LookUP(CustomerOrders, ID = 1), {Region: "Asia", Country: "China"}); // Para editar um registro, ThisItem pode substituir o Lookup;
+
+Remove(CustomerOrders, LookUp(CustomerOrders, ID = 1)); // Remover um registro, não solicita confirmação;
+
+RemoveIf(CustomerOrders, Status = "Expired"); // Remover com base em uma condição;
+
+Clear(collectSelectedItems); // Exclui todos os registros de uma coleção;
+
+ClearCollect: Clear + Collect;
+
+RemoveIf(CustomerOrders, true); // Remover todos os registros de uma fonte de dados;
+
+-------
+
+É possível salvar uma cópia de um aplicativo de tela com uma extensão .msapp;
+
+Com a descompactação do app em arquivos de texto individuais pode-se: editar o código fonte em um editor de texto, separar os arquivos txt para rastrear e granular alterações de um app, usar ferramentas automatizadas de desenvolvimento, etc;
+
+pac canvas unpack --msapp "Account Manager.msapp" --sources src; // Comando canvas unpack - .msapp to txt(vários);
+
+pac canvas pack --msapp "Account Manager.msapp" --sources src; // Comando canvas pack - txt(vários) to .msapp; 
+
+sources src: é o caminho da pasta;
+
+Microsoft Power Fx: linguagem de programação de uso geral de código baixo para expressar a lógica na Microsoft Power Platform;
+
+YAML é uma linguagem amigável de sinalização de dados;
+
+Após a descompactação: 
+  \src: arquivos de componente e controle;
+  *.fx.yaml: as fórmulas extraídas do arquivo control.json;
+  CanvasManifest.json: cabeçalho, propriedades e publishInfo;
+  *.json: arquivo control.json bruto;
+  \EditorState*.editorstate.json: info de cache;
+  \DataSources: todas as fontes de dados;
+  \Connections: instâncias de conexão salvas e usadas;
+  \Assets: anexos;
+  \pkgs: referências externas;
+  \other: arquivos diversos;
+  entropy.json: elementos diversos;
+
+Em um cenário de muitas pessoas desenvolvendo o mesmo código é preciso ficar atento;
+
+------- Reviewed - 20221119;
+
+Centro de Excelência: ajuda a desenvolver uma estratégia de adoção e suporte do MPP, com atenção no Powerapps e no Power Automate;
+
+-------
+
+Variáveis de ambiente: transportar os dados de configuração de um ambiente para outro no mesmo locatário;
+
+Soluções: dentro do PowerApps uma solução pode englobar aplicativos, fluxos e tabelas; é possível fazer edição com reconhecimento de solução, selecionando previamente a solução;
+
+-------
+
+Recomendações de implementação para ambientes do Microsoft Power Platform;
+
+O Microsoft Dynamics: conjunto de aplicativos de negócios inteligentes;
+
+-------
+
+Gerenciar o Power Virtual Agents; // Permite criar chatbots avançados;
+
+-------
+
+Gerenciar alterações ambientais no Microsoft Power Platform;
+
+DLP (Prevenção contra Perda de Dados);
+
+PowerShell: shell de linha de comando baseado em tarefas e linguagem de Script; // cmdlets, Scripts, Funções e programas executáveis isolados;
+
+-------
+
+Usar modelos para impor políticas de governança no Microsoft Power Platform;
+
+-------
+
+Comece a criar com o Power BI;
+
+1 - Trazer dados e criar relatório;
+2 - Publicar;
+3 - Compartilhar;
+4 - Exibir e interajir;
+
+Blocos: vizualização, conjunto de dados, relatórios e painéis; // Um bloco é uma visualização única em um dashboard;
+
+--------
+
+Obter dados com o Power BI Desktop;
+
+--------
+
+Modelar dados no Power BI;
+
+No Power Bi é possível criar um relacionamento para criar uma conexão lógica entre diferentes fontes de dados;
+
+É possível criar colunas calculadas no BI;
+
+Medidas são cálculos definidos sobre os dados executados no momento da consulta; // Trabalham mais ou menos em lógica de RAM;
+
+É possível também criar uma tabela calculada;
+
+O BI trabalha de maneira inteligente sobre dados temporais;
+
+---------
+
+PL100 Quiz - Get started with Canvas apps; // https://www.youtube.com/watch?v=zYNalV019hE&list=PLz5dITSUzInaBf6kX6aEZtvYhTSGTePDO&index=1&ab_channel=Skadoosh;
+
+Power Apps Admin Center will let you manage Power Apps environment and other components;
+
+Power Apps Studio é onde se desenvolve as aplicações;
+
+Power Apps Mobile é onde se usa os aplicativos nos celulares;
+
+Uma vez que se cria um Canvas App a partir de uma fonte de dados, automaticamente são geradas três telas (Busca, Detalhes e Editar/Criar);
+
+Canvas é "tela". É como ter uma tela em branco para arrastar componentes e codificar;
+
+Um aplicativo pode ser criado de diferentes formas (Template, Fonte de Dados e Blank);
+
+A Gateway can be used to provide a connection between an on premise data source and Power Apps;
+
+Power Query is a data transformation and data preparation engine;
+
+Power Query pode ser usado para "to fill/populate" dados em uma tabela customisada do Dataverso;
+
+Integração entre Power Apps e Power BI: ambos estão interligados entre si;
+
+Como um criador de aplicativos você deve considerar: requisitos de negócio, modelo de dados, experiência de usuário, interface de usuário, lógica de negócios, output, etc;
+
+Pop-Ups são comumente usados como melhorias de experiência de usuário;
+
+Antes de criar uma aplicação é desejável discutir a interface de usuário, pode-se usar Viso wireframe para tal;
+
+---------
+
+PL100 Quiz - Manage apps in Power Apps; // https://www.youtube.com/watch?v=2ybCKmEHUkg&list=PLz5dITSUzInaBf6kX6aEZtvYhTSGTePDO&index=2&ab_channel=Skadoosh;
+
+É possível restaurar um aplicativo para uma versão anterior, na home page ir na opção detalhes; 
+
+Uma nova versão nunca sobrescreve uma anterior;
+
+Se o aplicativo estiver aberto no Apps Studio não é possível restaurar;
+
+Versões anteriores a 6 meses são retiradas da biblioteca;
+
+Antes de publicar um app é necessário que ele esteja na nuvem;
+
+Ambiente é um espaço para armazenar apps, outros recursos, conexões de dados, fluxos do Power Automate, etc;
+
+Razões para trabalhar com Ambientes: separar o desenvolvimento por departamentos, separar as aplicações por ciclo de vida e gerenciar acesso aos dados;
+
+Power Apps Per app plan or Power Apps Per user plan; // Environments;
+
+Power Apps for Dynamics 365 license; // Dynamics 365;
+
+System admin: permissões totais para criar e gerenciar ambientes;
+
+Environment maker: vê, cria apps e trabalha com Dataverse; // Em um ambiente em questão;
+
+---------
+
+PL100 Quiz - Customize Canvas Apps; // https://www.youtube.com/watch?v=DkF2InBsKCo&list=PLz5dITSUzInaBf6kX6aEZtvYhTSGTePDO&index=3&ab_channel=Skadoosh;
+
+O menu de navegação, dentro do Studio, dá uma visão geral dos serviços que um app oferece aos usuários;
+
+Para uma navegação com múltiplas opções é recomendado usar uma combinação de coleção e galeria;
+
+Control (existem várias) é um mecanismo de interface de usuário, encontrado na "insert tab";
+
+DataCard1: representa um único campo do registro;
+
+IconAccept1: salva;
+
+Text(ThisItem.VegetablePrice, "$##.00"); // Pode dar BO por causa da language settings;
+
+---------
+
+Check your knowledge PL100 Quiz - Fundamentals of Canvas Apps - 30 questions; // https://www.youtube.com/watch?v=9XIGeGgUGaU&list=PLz5dITSUzInaBf6kX6aEZtvYhTSGTePDO&index=4&ab_channel=Skadoosh;
+
+Pode se construir um aplicativo a partir de: templates, blank e fonte de dados;
+
+É possível importar dados para o Dataverse a partir do Excel e CSV; // É preciso verificar a licença;
+
+---------
+
+PL100 Quiz Fundamentals of Model Driven Apps; // https://www.youtube.com/watch?v=8LFsqwJ2dns&list=PLz5dITSUzInaBf6kX6aEZtvYhTSGTePDO&index=5&ab_channel=Skadoosh;
+
+Model-Driven Apps: só pode usar Dataverse; // São focados em dashboards, forms, views e charts. Pouco código, mais prático;
+
+Model-driven apps tem três fases de design: modelagem dos dados, definição dos processos e construção; Codificar não é uma fase de design;
+
+Model-driven apps usa arquitetura de metadados, portanto, podem ser customizados sem escrever código;
+
+Para adicionar componentes em um model driven apps (dados, lógica, UI e visualização) usa-se App Designer;
+
+Model driven é automaticamente responsivo; // Perde-se alguns aspectos de controle de interface de usuário;
+
+Componentes: tabelas, colunas relacionamentos, choice column; // Table Designer;
+
+Fluxo de regra de negócio; // Aprovar um pedido antes de iniciá-lo;
+
+App designer; //
+
+Site map designer; // Navigation;
+
+Form designer; // Entrada de dados e colunas;
+
+View Designer; // Como uma lista de dados aparece no app;
+
+Flow: fluxos automáticos entre apps e serviços;
+
+Workflow: automatizar business process sem UI;
+
+Actions: ações invocadas manualmente;
+
+Business rule: aplicar regras lógicas a um formulário ou requisitos de uma coluna;
+
+Considerar: requisitos, lógica, modelo, e saída;
+
+Para compartilhar: administrador de ambiente ou administrador do sistema; 
+
+Business flow process: assegura que os usuários entrem com dados consistentes e padronizados;
+
+Multi-table processes podem conter no máximo 5 tabelas e não pode haver mais de 10 business process flow ativos por tabela;
+
+---------
+
+PL100 Quiz Fundamentals of Dataverse; // https://www.youtube.com/watch?v=a1inj1tStTM&list=PLz5dITSUzInaBf6kX6aEZtvYhTSGTePDO&index=6&ab_channel=Skadoosh;
+
+Dataverse não tem nada a ver com "on-premise data storage"; // Tem a ver com "role-based security", "Dynamics 365" e "armazenamento e gerenciamento";
+
+Dataverse é usado para armazenar e gerenciar os dados usados pelo Dynamics 365;
+
+Regras de negócio: valida dados entre colunas; // Mensagens de erro e alerta;
+
+Fluxo de regras de negócio: assegurar que o user entre com dados consistentes e siga os mesmos passos todas as vezes; //  Apenas presente no model driven;
+
+Workflows: automatiza regras de negócio sem a necessidade de interação com o usuário;
+
+Business logic with code: suporta lógicas avançadas de desenvolvimento;
+
+Tabela de metadados controla os tipos de linhas que podem ser criadas e que tipo de ações podem ser performadas nas mesmas;
+
+Para mudar o nome da coluna editar o "display name"; // Tabela Dataverse;
+
+Relacionamento de tabelas define o relacionamento formal entre tabelas. O mesmo proporciona a queries restaurar dados com eficiência. Relacionamentos são metadados;
+
+Uma vez criada a tabela, não é possível mudar o ownership; // User, team ou organization;
+
+Atividades (tabelas) podem pertencer a um user ou team; // Activity tables;
+
+Business rules: setar, limpar, setar níveis de requisitos, mostrar/ocultar, habilitar/desabilitar e validar;
+
+Dual Write Table proporciona interação entre Dataverse, Finence e Operations apps; // interação bidirecional;
+
+Virtual tables: permite integrar com dados de outras fontes, representando os dados como tabelas dataverse;
+
+Em canvas não é possível: mostrar/esconder colunas, habilitar/desabilitar colunas e criar recomendações baseadas em business intelligence;
+
+---------
+
+PL100 Quiz Model Driven Apps Configure Forms, Dashboards, Views, and Charts; // https://www.youtube.com/watch?v=cC2epsZfsMs&list=PLz5dITSUzInaBf6kX6aEZtvYhTSGTePDO&index=7&ab_channel=Skadoosh;
+
+Browse Screen não faz parte de Driven Apps;
+
+Não é possível editar registros em Views e Grids; // Em Forms sim;
+
+Form controls: standard column, custom controls, specialized controls; // Propriedades, visualizações e mapping, respectivamente;
+
+Custom controls tem a ver com entradas; // iFrame não é um;
+
+Form types: Main (prymary); Quick create (full suport of logic); Quick view (algo como um detalhe); Card (mostrar colunas chave);
+
+Main form funciona tanto no model-driven quanto no dynamics;
+
+Somente o primeiro Quick Create form estará disponível para usuários finais; // Em um cenário com 3 forms em Accounts table;
+
+Quick View form pode ser adicionado em outro form como um quick view control; // Detalhe;
+
+Form event handlers permite configurar e desenvolver lógicas que executam quando o usuário interaje com o form; // Talvez seja algo como um ajax;
+
+Somente Main forms podem ser trabalhados na parte da segurança;
+
+Cada tabela deve ter um fallback form; // form que pode ser acessado por qualquer um, questões de segurança;
+
+O controle de segurança está nos dados e não nos forms;
+
+iFrame serve para integrar conteúdos de sites com forms;
+
+Views: colunas a mostrar, ordem das colunas, largura, ordem dos registros e filtros padrão;
+
+System views podem ser editados pelo System administrator e pelo System customizer;
+
+Personal views são associadas a indivíduos e public views são de propósito geral;
+
+Associated (host and related tables); Lookup (fisrt three columns are visible after a click); Quick find (define quais colunas são usadas para determinar os resultados);
+
+Editable grids: apenas para edição; // Não é possível criar;
+
+Dashboards: muitas áreas de uma aplicação em uma única tela;
+
+Personal charts não podem ser exportados via solution, mas podem ser via XML;
+
+Charts podem conter registros de uma única entidade;
+
+---------
+
+PL100 Quiz - Fundamentals of Power Automate; // https://www.youtube.com/watch?v=COnCXZKHJ7I&list=PLz5dITSUzInaBf6kX6aEZtvYhTSGTePDO&index=9&ab_channel=Skadoosh;
+
+Power Automate pode trabalhar com dados "on-premise"; 
+
+Tipos: cloud, desktop, business process;
+
+Automate pode se conectar com mais de 100 data sources;
+
+Process advisor: criar processos para ajudar a organização a entender o fluxo dos workflows;
+
+Solutions: gerenciar soluções;
+
+Monitor: ver as atividades de todos os fluxos; 
+
+Usando o automate: automatizar processos, mandar lembretes, mover dados entre sistemas, conectar com outras fontes de dados e automatizar tarefas em seu computador pessoal;
+
+Automated, instant e scheduled: disparado por um evento, disparado por um click ou botão e programado; // Respectivamente;
+
+Desktop flow (web or desktop): drag-and-drop actions os recording your own desktop flows to run later; // Robotic Process Automation (RPA);
+
+Instant flow não é um elemento de desktop flows; // Selenium IDE e windows recorder são;
+
+Activity feed mostra se os flows tiveram sucesso ou não;
+
+Recurrence flow: algo que acontece toda sexta-feira;
+
+Se o cara deixar a empresa os outros owners ainda estão habilitados para usar (run) o mesmo;
+
+Shared flow: paid plan, owners can remove owners, mas não podem mudar as credencias de conexões criadas por outro owner;
+
+Creator ou owner podem compartilhar, add ou remover owners no automate;
+
+Na página monitor é possível identificar e reparar qualquer erro; // Aquela página com o fluxograma;
+
+Error code 500 or 502: temporary issues;
+
+---------
+
+PL100 Quiz - Use the UI and controls in a canvas app - Navigation in a canvas app in Power Apps; // https://www.youtube.com/watch?v=fs7oRhP43sk&list=PLz5dITSUzInaBf6kX6aEZtvYhTSGTePDO&index=10&ab_channel=Skadoosh;
+
+Hidden screens são screens sem navigates apontando pra elas; // Propósitos de documentação, settings e permissões especiais;
+
+OnSelect não é a única maneira de se aplicar o navigate; // Exemplo: um DropDown mais um If;
+
+Timer control: se o cara não responder a pergunta em x segundos ir para outra tela;
+
+---------
+
+Usar visuais no Power BI;
+
+--------- Reviewed - 20221120;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///

@@ -1,0 +1,19 @@
+1 - criar uma pasta dentro de www;
+2 - publicar projeto;
+3 - jogar projeto compactado dentro da pasta;
+4 - https://vedvoyager.com.br/deploy/app_Login/;
+5 - criar senha do ambiente de produção; // https://vedvoyager.com.br/deploy/_lib/prod/lib/php/?login - Ac5@;
+
+ALTER TABLE `vedvoyager_vedvoyager_prod`.`sec_users_groups` 
+ADD CONSTRAINT `fklogin_sec_users`
+  FOREIGN KEY (`login`)
+  REFERENCES `vedvoyager_vedvoyager_prod`.`sec_users` (`login`)
+  ON DELETE RESTRICT
+  ON UPDATE RESTRICT; // criando a constraint para não poder deletar nem atualizar nem deletar em sec_users;
+
+ALTER TABLE `vedvoyager_vedvoyager_prod`.`sec_users_groups` 
+ADD CONSTRAINT `fklogin_sec_groups`
+  FOREIGN KEY (`group_id`)
+  REFERENCES `vedvoyager_vedvoyager_prod`.`sec_groups` (`group_id`)
+  ON DELETE RESTRICT
+  ON UPDATE RESTRICT; 

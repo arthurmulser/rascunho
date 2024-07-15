@@ -1,0 +1,18 @@
+20231217 - sudo apt update
+sudo apt upgrade;
+20231217 - sudo apt install build-essential dkms linux-headers-$(uname -r);
+20231217 - sudo mkdir /media/cdrom;
+20231217 - sudo mount /dev/cdrom /media/cdrom;
+20231217 - cd /media/cdrom
+sudo ./VBoxLinuxAdditions.run;
+20231217 - sudo reboot;
+20240307 - sudo apt-get update;
+20240307 - sudo apt-get install google-chrome-stable;
+20240311 - sudo apt-get install python3-pyqt5 libsecp256k1-dev python3-cryptography;
+20240311 - wget https://download.electrum.org/4.5.3/Electrum-4.5.3.tar.gz;
+20240311 - wget https://download.electrum.org/4.5.3/Electrum-4.5.3.tar.gz.asc;
+20240311 - sudo apt-get install python3-setuptools python3-pip;
+20240311 - python3 -m pip install --user Electrum-4.5.3.tar.gz;
+20240311 - tar -xvf Electrum-4.5.3.tar.gz
+20240311 - python3 Electrum-4.5.3/run_electrum;
+20240323 - criado standard user: angela;
