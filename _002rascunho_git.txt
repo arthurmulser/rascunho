@@ -5,3 +5,6 @@
 5 - git commit -a -m "Início de trabalho"; // commit de tudo com mensagem;
 6 - git checkout 48f0f080d05434111bc2cf4d5183df660194b451 -- lib/interfaces_turnos_oper_level2/pessoasNoTurno.dart; // restaura apenas o arquivo pessoasNoTurno para a versão do hash 48f0f080d05434111bc2cf4d5183df660194b451;
 7 - git clone https://github.com/Tech2as/projetoInicial; // clonar um projeto remoto; 
+8 - git branch -D nome-da-branch; // forçar o delete local de uma branch não mesclada;
+9 - git push origin --delete nome-da-branch; // delete da branch no repositório remoto;
+
