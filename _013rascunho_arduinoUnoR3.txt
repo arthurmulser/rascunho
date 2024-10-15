@@ -1,0 +1,1 @@
+20240723 - as bibliotecas ficam em C:\Users\athr4\OneDrive\Documentos\Arduino\libraries;

@@ -8,7 +8,7 @@
 6 - expectativa: daqui a duas duas semanas retirar o restante da binance;
 --- 20240518;
 7 - exercício iancoleman: importado - tattoo abandon salmon expire any book front lamp echo penalty human funny - da aula do 38tão, foram replicados os testes que ele fez na aula e os valores das chaves bateram;
-8 - continuação do exercício: mais entropia com passphrase; // conforme valores da última página do livro "O MÍTICO HOMEM-MÊS";
+8 - continuação do exercício: mais entropia com passphrase; // conforme valores da última página do livro "o mítico homem mês";
 --- 20240526;
 9 - duas transferências de binance para wallet of satoshi com sucesso; // valor: 579599 sats;
 --- 20240530;
@@ -18,6 +18,8 @@
 12 - 564599 sats; // saldo após transferir 15 mil sats para o Smith, houve bonus na transação (0 fees);
 --- 20240606;
 13 - geração de seed e private key via Ian Coleman no notebook hp offline;
+--- 20240904;
+14 - voto na assembleia do bcff11, serviços -> voto a distância -> assembleias em aberto;
 
 --- --- ---
 
@@ -27,6 +29,7 @@ bc1qqtgqcdq9s0w0nuql72n4n4g8n5vgrplkkkp3w0 - blue;
 bc1qevxrcc80lg3l5xp0d9g99hsf6c9269nc90060k - bip39-000;
 bc1qetq5r8hmpnss39xqnmvrlyz230yurpd7fk83n3 - bip39-001;
 bc1qt0yjray0gwfh0sthlelkpuqqejrtxk25syr8zf - bip39-002;
+bc1qmq2k0wyxa3s8a246ex4q6v4jc4x3pzwgqg7paw - bip39-003;
 
 --- --- ---
 
@@ -34,7 +37,7 @@ bc1qt0yjray0gwfh0sthlelkpuqqejrtxk25syr8zf - bip39-002;
 1 - o saldo do nubank está protegido pelo FGC por um total de 250 mil reais;
 --- 20240613;
 2 - cadastro de driver license no wise para vincular conta ao meu id;
-3 - o passo 1 foi necessário para sacar dinheiro da interactive brokers para a wise; // USD 63.36;
+3 - o passo 1 foi necessário para sacar dinheiro da interactive brokers para a wise; // usd 63.36;
 --- 20240617;
 4 - na segunda recebi o valor na minha conta wise, após o câmbio foi para 339,76 reais (5,36 de taxa efetiva); // o câmbio estava 5,38;
 

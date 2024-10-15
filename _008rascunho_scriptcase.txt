@@ -3,6 +3,7 @@
 3 - jogar projeto compactado dentro da pasta;
 4 - https://vedvoyager.com.br/deploy/app_Login/;
 5 - criar senha do ambiente de produção; // https://vedvoyager.com.br/deploy/_lib/prod/lib/php/?login - Ac5@;
+6 - permissão na pasta /home/vedvoyager/sc.vedvoyager.com.br/_lib/prod/third/wkhtmltopdf; // para corrigir erro ao criar pdf;
 
 ALTER TABLE `vedvoyager_vedvoyager_prod`.`sec_users_groups` 
 ADD CONSTRAINT `fklogin_sec_users`
