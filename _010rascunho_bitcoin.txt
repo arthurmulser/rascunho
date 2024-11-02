@@ -18,10 +18,6 @@
 12 - 564599 sats; // saldo após transferir 15 mil sats para o Smith, houve bonus na transação (0 fees);
 --- 20240606;
 13 - geração de seed e private key via Ian Coleman no notebook hp offline;
---- 20240904;
-14 - voto na assembleia do bcff11, serviços -> voto a distância -> assembleias em aberto;
-
---- --- ---
 
 12nwvxTbP8figqz2eLxHDRr2hhPu5o1mLM - safe; 12nwvxTbP8figqz2eLxHDRr2hhPu5o1mLM - jaxx;
 bc1qp5ha3xa0rp6jem262m7273gc50cepfa94zem64 - trust;
@@ -40,4 +36,13 @@ bc1qmq2k0wyxa3s8a246ex4q6v4jc4x3pzwgqg7paw - bip39-003;
 3 - o passo 1 foi necessário para sacar dinheiro da interactive brokers para a wise; // usd 63.36;
 --- 20240617;
 4 - na segunda recebi o valor na minha conta wise, após o câmbio foi para 339,76 reais (5,36 de taxa efetiva); // o câmbio estava 5,38;
+
+--- --- ---
+
+--- 20240904;
+1 - voto na assembleia do bcff11, serviços -> voto a distância -> assembleias em aberto;
+--- 20241102;
+2 - baixei meus extratos no portal de investidor da b3; // a partir de 2020 estão completos, 2019 eu apenas consegui os últimos dois meses e anteriores a 2018 eu não consegui;
+3 - btg está requerindo o informe do custo médio do bcff11 (processo bthf11), devido a eu não conseguir os registros na plataforma b3 irei usar os dados incompletos do meu w7; // (23*10,68 + 25*10,06 + 5*10,57 + 1*11,13 + 11*11,57 + 6*9,28 + 3 *7,25)/74 = 10,34;
+---
 
