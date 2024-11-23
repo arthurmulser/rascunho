@@ -21,13 +21,19 @@
 --- 20240220;
 17 - dashboard(app(navigation(application-logo))); // pra eu mudar a logo na dash tive que ir ate a application-logo;
 --- 20240225;
-18 - composer update laravel/framework e composer update; // atualizou algumas coisas, mas a versão do laravel permaneceu: Laravel Framework 9.52.16;
+18 - composer update laravel/framework e composer update; // atualizou algumas coisas, mas a versão do laravel permaneceu: laravel framework 9.52.16;
 --- 20240303;
 19 - [vedvoyager@bs021 laravel.vedvoyager.com.br]$ php artisan migrate; // no terminal do cPanel para rodar as migrations;
-20 - Bancos de dados MySQL - Gerenciar privilégios do usuário; // dar somente os acessos necessários;
+20 - bancos de dados mysql - gerenciar privilégios do usuário; // dar somente os acessos necessários;
 21 - php artisan migrate:rollback; // desfaz a ultima migration;
 --- 20240514;
 22 - php artisan make:controller PhotoController --resource; // cria um controller em app->Http->Controllers;
+--- 20241122;
+23 - # Run as administrator... Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows')); // feito no dell;
+24 - laravel new example-app;
+25 - foi instalado o docker desktop; // aparentemente, depois de atualizar o docker deu certo;
+26 - curl -s "https://laravel.build/example-app" | bash; // rodar ou no powershell com wsl ou no terminal do ubuntu, dentro da system32 deu "permission denied", ?with=mysel cria com mysql;
+27 - ./vendor/bin/sail up; // start laravel sail;
 
 *verificar rota de read das perguntas, está rodando, mas não está imprimindo;
 
