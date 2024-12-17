@@ -12,3 +12,4 @@
 20240519 - apaguei a pasta Steam dentro de AppData -> Local;
 20240727 - Zoom Workplace;
 20240728 - unistall Zoom Workplace;
+20241211 - dbeaver;

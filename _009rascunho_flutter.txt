@@ -29,6 +29,9 @@
 --- 20240622;
 20 - no note acer tive que ajustar o "minSdkVersion 20"; // dentro de android -> app -> build.gradle;
 21 - depois no terminal veio a mensagem: Do you want to continue with adding multidex support for Android? [y|n]: y; // cliquei "y";
+--- 20241215;
+git fetch --all; // dentro de flutter_sdk;
+git checkout 5dcb86f68f; // rodei esse comando para fazer downgrade da versão superior para a 3.22.0 do flutter, pois meu projeto não estava fazendo build;
 
 
 
